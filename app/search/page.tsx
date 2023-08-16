@@ -1,6 +1,6 @@
 import getSongsByTitle from '@/actions/getSongsByTitleOrAuthor'
-import Header from '@/components/Header'
-import SearchInput from '@/components/SearchInput'
+import Header from '@/components/shared/Header'
+import SearchInput from '@/app/search/components/SearchInput'
 import { FC } from 'react'
 import SearchResults from './components/SearchResults'
 

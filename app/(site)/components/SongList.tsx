@@ -2,13 +2,16 @@
 
 import { Song } from '@/types'
 import { FC } from 'react'
-import SongItem from '../../../components/SongItem'
+import SongItem from './SongItem'
+import useOnPlay from '@/hooks/useOnPlay'
 
 interface Props {
   songs: Song[]
 }
 
 const SongList: FC<Props> = ({ songs }) => {
+  const onPlay = useOnPlay(songs)
+
   if (songs.length === 0)
     return (
       <div className='mt-4 text-neutral-400'>
@@ -21,7 +24,11 @@ const SongList: FC<Props> = ({ songs }) => {
   return (
     <div className='mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6'>
       {songs.map((song) => (
-        <SongItem key={song.id} song={song} onClick={console.log} />
+        <SongItem
+          key={song.id}
+          song={song}
+          onClick={(song) => onPlay(song.id)}
+        />
       ))}
     </div>
   )

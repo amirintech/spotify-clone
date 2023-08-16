@@ -7,7 +7,7 @@ import { FC } from 'react'
 
 interface Props {
   song: Song
-  onClick?: (song: Song) => void
+  onClick?: (songId: string) => void
 }
 
 const MediaItem: FC<Props> = ({ onClick, song }) => {
@@ -17,7 +17,7 @@ const MediaItem: FC<Props> = ({ onClick, song }) => {
   return (
     <div
       role='button'
-      onClick={() => onClick?.(song)}
+      onClick={() => onClick?.(song.id)}
       className='flex w-full cursor-pointer items-center gap-3 rounded-md p-2 hover:bg-neutral-800/50'
     >
       <div className='relative min-h-[48px] min-w-[48px] overflow-hidden rounded-md'>

@@ -7,7 +7,8 @@ import { useUser } from '@/hooks/useUser'
 import useUploadModal from '@/hooks/useUploadModal'
 import { Song } from '@/types'
 import { FC } from 'react'
-import LibraryItem from './MediaItem'
+import MediaItem from '../media/MediaItem'
+import useOnPlay from '@/hooks/useOnPlay'
 
 interface Props {
   songs: Song[]
@@ -17,6 +18,7 @@ const Library: FC<Props> = ({ songs }) => {
   const authModal = useAuthModal()
   const uploadModal = useUploadModal()
   const { user } = useUser()
+  const onPlay = useOnPlay(songs)
 
   const handleClick = () => {
     if (!user) return authModal.onOpen()
@@ -40,7 +42,7 @@ const Library: FC<Props> = ({ songs }) => {
 
       <div className='mt-4 flex flex-col gap-y-2 px-3'>
         {songs.map((song) => (
-          <LibraryItem key={song.id} onClick={console.log} song={song} />
+          <MediaItem key={song.id} onClick={onPlay} song={song} />
         ))}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import getSongs from '@/actions/getSongs'
-import Header from '@/components/Header'
-import ListItem from '@/components/ListItem'
+import Header from '@/components/shared/Header'
+import ListItem from '@/components/sidebar/ListItem'
 import SongList from './components/SongList'
 import getLikedSongs from '@/actions/getLikedSongs'
 

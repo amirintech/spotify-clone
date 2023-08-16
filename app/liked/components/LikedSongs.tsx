@@ -1,7 +1,8 @@
 'use client'
 
-import LikeButton from '@/components/LikeButton'
-import MediaItem from '@/components/MediaItem'
+import LikeButton from '@/components/shared/LikeButton'
+import MediaItem from '@/components/media/MediaItem'
+import useOnPlay from '@/hooks/useOnPlay'
 import { useUser } from '@/hooks/useUser'
 import { Song } from '@/types'
 import { useRouter } from 'next/navigation'
@@ -14,6 +15,7 @@ interface Props {
 const LikedSongs: FC<Props> = ({ songs }) => {
   const router = useRouter()
   const { isLoading, user } = useUser()
+  const onPlay = useOnPlay(songs)
 
   useEffect(() => {
     // only authenticated users are allowed
@@ -34,7 +36,7 @@ const LikedSongs: FC<Props> = ({ songs }) => {
       {songs.map((song) => (
         <div key={song.id} className='flex w-full items-center gap-x-4'>
           <div className='flex-1'>
-            <MediaItem onClick={console.log} song={song} />
+            <MediaItem onClick={onPlay} song={song} />
           </div>
           <LikeButton songId={song.id} />
         </div>

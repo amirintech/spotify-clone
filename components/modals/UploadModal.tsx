@@ -11,8 +11,8 @@ import { z } from 'zod'
 import { useRouter } from 'next/navigation'
 import useUploadModal from '@/hooks/useUploadModal'
 import Modal from './Modal'
-import Input from './Input'
-import Button from './Button'
+import Input from '../shared/Input'
+import Button from '../shared/Button'
 import { useUser } from '@/hooks/useUser'
 
 const schema = z.object({
