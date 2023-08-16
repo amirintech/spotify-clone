@@ -4,7 +4,8 @@ import Image from 'next/image'
 import LikedSongs from './components/LikedSongs'
 
 export const revalidate = 0
-const page = async () => {
+
+const Home = async () => {
   const songs = await getLikedSongs()
 
   return (
@@ -34,4 +35,4 @@ const page = async () => {
   )
 }
 
-export default page
+export default Home
