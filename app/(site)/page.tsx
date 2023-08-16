@@ -2,6 +2,7 @@ import getSongs from '@/actions/getSongs'
 import Header from '@/components/Header'
 import ListItem from '@/components/ListItem'
 import SongList from './components/SongList'
+import getLikedSongs from '@/actions/getLikedSongs'
 
 export const revalidate = 0
 
