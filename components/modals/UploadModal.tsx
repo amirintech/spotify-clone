@@ -43,8 +43,6 @@ const UploadModal = () => {
   })
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
-    console.log(data)
-    console.log('submitted')
     try {
       setLoading(true)
 

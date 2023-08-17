@@ -5,7 +5,6 @@ const useDebounce = <T>(value: T, delay?: number): T => {
 
   useEffect(() => {
     const timerId = setTimeout(() => setDebouncedValue(value), delay || 500)
-    console.log('hey')
     return () => clearTimeout(timerId)
   }, [value, delay])
 
