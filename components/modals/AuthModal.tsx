@@ -34,6 +34,7 @@ const AuthModal = () => {
       onChange={handleChange}
     >
       <Auth
+        providers={[]}
         theme='dark'
         supabaseClient={client}
         appearance={{
