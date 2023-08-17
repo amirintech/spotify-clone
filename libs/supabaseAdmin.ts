@@ -129,26 +129,26 @@ export const manageSubscriptionStatusChange = async (
       quantity: subscription.quantity,
       cancel_at_period_end: subscription.cancel_at_period_end,
       cancel_at: subscription.cancel_at
-        ? toDateTime(subscription.cancel_at).toString()
+        ? toDateTime(subscription.cancel_at).toISOString()
         : null,
       canceled_at: subscription.canceled_at
-        ? toDateTime(subscription.canceled_at).toString()
+        ? toDateTime(subscription.canceled_at).toISOString()
         : null,
       current_period_start: toDateTime(
         subscription.current_period_start,
-      ).toString(),
+      ).toISOString(),
       current_period_end: toDateTime(
         subscription.current_period_end,
-      ).toString(),
-      created: toDateTime(subscription.created).toString(),
+      ).toISOString(),
+      created: toDateTime(subscription.created).toISOString(),
       ended_at: subscription.ended_at
-        ? toDateTime(subscription.ended_at).toString()
+        ? toDateTime(subscription.ended_at).toISOString()
         : null,
       trial_start: subscription.trial_start
-        ? toDateTime(subscription.trial_start).toString()
+        ? toDateTime(subscription.trial_start).toISOString()
         : null,
       trial_end: subscription.trial_end
-        ? toDateTime(subscription.trial_end).toString()
+        ? toDateTime(subscription.trial_end).toISOString()
         : null,
     }
 

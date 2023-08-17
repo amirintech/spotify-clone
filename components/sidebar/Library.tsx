@@ -9,19 +9,24 @@ import { Song } from '@/types'
 import { FC } from 'react'
 import MediaItem from '../media/MediaItem'
 import useOnPlay from '@/hooks/useOnPlay'
+import useSubscribeModal from '@/hooks/useSubscribeModal'
 
 interface Props {
   songs: Song[]
 }
 
 const Library: FC<Props> = ({ songs }) => {
+  const subscribeModal = useSubscribeModal()
   const authModal = useAuthModal()
   const uploadModal = useUploadModal()
-  const { user } = useUser()
+  const { user, subscription } = useUser()
   const onPlay = useOnPlay(songs)
 
   const handleClick = () => {
     if (!user) return authModal.onOpen()
+
+    if (!subscription) return subscribeModal.onOpen()
+
     uploadModal.onOpen()
   }
 

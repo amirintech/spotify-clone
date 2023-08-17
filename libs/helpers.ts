@@ -7,7 +7,7 @@ export const getURL = () => {
     'http://localhost:3000/'
 
   url = url.includes('http') ? url : `https://${url}`
-  url = url + url.endsWith('/') ? '' : '/'
+  url = url + (url.endsWith('/') ? '' : '/')
 
   return url
 }
@@ -37,5 +37,5 @@ export const postData = async ({
   return res.json()
 }
 
-export const toDateTime = (secs: number) =>
-  new Date('1970-01-01T00:30:00Z').setSeconds(secs)
+export const toDateTime = (secs: number): Date =>
+  new Date(new Date('1970-01-01T00:30:00Z').setSeconds(secs))
