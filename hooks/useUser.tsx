@@ -52,18 +52,12 @@ export const UserContextProvider = (props: Props) => {
       const userDetailsPromise = res[0]
       const subscriptionPromise = res[1]
 
-      if (userDetailsPromise.status == 'fulfilled') {
+      if (userDetailsPromise.status == 'fulfilled')
         setUserDetails(userDetailsPromise.value.data)
-        console.log('================user=============')
-        console.log(userDetailsPromise.value.data)
-      }
 
-      if (subscriptionPromise.status == 'fulfilled') {
+      if (subscriptionPromise.status == 'fulfilled')
         setSubscription(subscriptionPromise.value.data)
 
-        console.log('================subsritopn=============')
-        console.log(subscriptionPromise.value.data)
-      }
       setLoadingData(false)
     })
   }, [user, isLoadingUser])

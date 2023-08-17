@@ -6,7 +6,7 @@ const getProductsWithPrices = async (): Promise<ProductWithPrice[]> => {
   const supabase = createServerComponentClient({
     cookies: cookies,
   })
-  const { data, error } = await supabase
+  const { data } = await supabase
     .from('products')
     .select('*, prices(*)')
     .eq('active', true)
@@ -14,7 +14,6 @@ const getProductsWithPrices = async (): Promise<ProductWithPrice[]> => {
     .order('metadata->index')
     .order('unit_amount', { foreignTable: 'prices' })
 
-  if (error) console.error(error)
   return data ?? []
 }
 

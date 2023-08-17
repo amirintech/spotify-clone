@@ -12,13 +12,12 @@ const getSongsByTitleOrAuthor = async (
     cookies: cookies,
   })
 
-  const { data, error } = await supabase
+  const { data } = await supabase
     .from('songs')
     .select('*')
     .or(`author.ilike.%${titleOrAuthor}%,title.ilike.%${titleOrAuthor}%`)
     .order('created_at', { ascending: false })
 
-  if (error) console.error(error)
   return data ?? []
 }
 
