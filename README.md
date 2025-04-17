@@ -18,9 +18,8 @@ A full‑stack music‑streaming platform that recreates the core experience of 
 | Category | Details |
 |----------|---------|
 | **Authentication** | Supabase e‑mail / GitHub OAuth with protected server actions |
-| **Audio Player** | Play / pause, next / previous, mute / volume slider, progress scrubber |
+| **Audio Player** | Play / pause, next / previous |
 | **User Library** | “Liked Songs” playlist persisted per user & synced in real‑time |
-| **Song Uploads** | Drag‑and‑drop UI → files stored in Supabase **Storage** buckets |
 | **Payments** | Stripe Checkout & webhooks for monthly / yearly “Premium” subscription |
 | **Responsive Design** | Tailwind CSS + Radix UI = buttery‑smooth animations & dark theme |
 | **Type‑safe** | End‑to‑end TypeScript with Zod validation & generated Supabase types |
