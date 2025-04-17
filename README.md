@@ -55,9 +55,9 @@ A full‑stack music‑streaming platform that recreates the core experience of 
 
 ## 🖼️ Screenshots
 
-| Home | Player |
+| Home | Liked Songs |
 |------|--------|
-| ![Home](./public/readme/home.png) | ![Player](./public/readme/liked.png) |
+| ![Home](./public/readme/home.png) | ![Liked Songs](./public/readme/liked.png) |
 
 *(Add your own screenshots to `public/readme/*` and the table will render on GitHub.)*
 
